@@ -2,6 +2,7 @@
 :root {
     --main-font: 'Inter-Variable';
     --accent-font: 'Press Start 2P';
+    --font-size: 18px;
     --main-wght: 410;
     --accent-wght: 715;
     --bg-gradient: repeating-linear-gradient(to right, #d3d3d3, transparent 2px),
@@ -10,4 +11,6 @@
     --clamp-size: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
     --bg-color: #fff;
     --gap-card: 25px;
+    --border-color: #000;
+    --stroke-color: rgba(255, 255, 255, 1)
 }
