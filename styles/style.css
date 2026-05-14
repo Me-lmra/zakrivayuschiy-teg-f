@@ -28,12 +28,15 @@
   block-size: clamp(20.4375rem, 19.5352rem + 3.8498vw, 23rem);
   font-family: var(--accent-font, monospace);
   text-transform: uppercase;
-  background-color: var(--bg-color);
   border: 2px solid var(--border-color);
+  background-color: var(--bg-color);
 }
 
 .clamp-size {
   inline-size: var(--clamp-size);
+}
+
+.mg-clamp {
   margin: clamp(6.25rem, 6.25rem + 0vw, 6.25rem) clamp(0rem, -8.1426rem + 34.7418vw, 23.125rem);
 }
 
@@ -59,8 +62,9 @@
 .cards {
   display: flex;
   flex-direction: column;
-  gap: clamp(3.25rem, 3.294rem + -0.1878vw, 3.125rem);
-  background-color: var(--bg-color);
+  gap: calc(var(--gap-card) * 2);
+  font-size: var(--font-size);
+  font-weight: var(--main-wght);
 }
 
 /* карточки */
@@ -69,21 +73,31 @@
   display: flex;
   flex-direction: column;
   border: 2px solid var(--border-color);
+  background-color: var(--bg-color);
 }
 
 .card__title {
   padding: 4px 10px;
-  font-size: var(--font-size);
+  font-weight: var(--accent-wght);
+  font-size: inherit;
 }
 
 /* картинка и лейбл */
+
+.card__image-label picture {
+  display: block;
+  inline-size: 100%;
+  aspect-ratio: 1 / 1;
+}
 
 .card__image-label {
   position: relative;
 }
 
 .image {
+  display: block;
   inline-size: 100%;
+  min-block-size: 100%;
   object-fit: cover;
 }
 
@@ -93,7 +107,7 @@
   right: var(--gap-card);
   font-family: var(--accent-font, monospace);
   text-transform: uppercase;
-  font-size: .88rem;
+  font-size: var(--accent-font-size);
   filter: opacity(.5);
   mix-blend-mode: hard-light;
   -webkit-text-stroke: 1px var(--stroke-color);
@@ -105,20 +119,132 @@
   }
 }
 
-/* абзацы карточки  и кнопка лайка*/
+/* абзацы карточки и кнопки лайка*/
 
-.card__description-like {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: var(--gap-card);
-}
-
-.description {
+.card__description {
   display: flex;
   flex-direction: column;
   gap: var(--gap-card);
+  padding: var(--padding);
   font-family: var(--main-font, monospace);
-  font-size: var(--font-size);
   line-height: 21px;
+}
+
+/* стилизация и анимация кнопок лайка */
+
+.card__buttons {
+  display: flex;
+  align-self: end;
+  padding-inline-end: var(--padding);
+  padding-block-end: calc(var(--padding) - 4px);
+  margin-top: auto;
+  align-items: center;
+}
+
+.card__icon-button {
+  background: none;
+  border: none;
+}
+
+.card__like-button {
+  background: none;
+  border: 2px solid var(--border-color);
+  inline-size: 130px;
+  block-size: 38px;
+}
+
+.button__text {
+  font-family: var(--accent-font, monospace);
+  font-size: var(--accent-font-size);
+}
+
+
+/* кнопка с дискетой*/
+
+.button__floppy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  inline-size: calc(100% - (34.5px * 2));
+  padding-block: 17px;
+  margin: 0 34.5px 100px;
+  background-color: var(--bg-color);
+}
+
+.floppy {
+  display: block;
+  inline-size: 28px;
+  block-size: 28px;
+}
+
+/* всплывающее окно */
+
+.popover {
+  inline-size: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
+  min-block-size: 191px;
+  border: 2px solid var(--border-color);
+}
+
+.popover:popover-open {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  padding: 30px 40px;
+}
+
+.popover:popover-open::backdrop {
+  backdrop-filter: brightness(20%);
+}
+
+body:has(.popover:popover-open) {
+  overflow: hidden;
+}
+
+.popover__floppy {
+  inline-size: 39px;
+  block-size: 39px;
+}
+
+.popover__text {
+  font-family: var(--accent-font, monospace);
+  text-transform: uppercase;
+  line-height: 1.5;
+  font-size: var(--accent-font-size);
+  margin-inline-start: 20px;
+}
+
+.button__popover {
+  background: none;
+
+  grid-column: span 2;
+  inline-size: 100%;
+  block-size: 38px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+/* АДАПТИВ */
+
+@media (width >= 1440px) {
+  .card__description {
+    padding: calc(var(--padding) - 4px);
+  }
+
+  .card__buttons {
+    padding-block-end: var(--padding);
+  }
+
+  .button__floppy {
+    display: flex;
+    flex-direction: row;
+    inline-size: calc(100vw - (552.5px * 2));
+    margin: 0 182.5px 100px;
+  }
+
+  .floppy {
+    inline-size: 21px;
+    block-size: 21px;
+  }
 }
