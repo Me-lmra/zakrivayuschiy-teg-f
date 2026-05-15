@@ -11,8 +11,17 @@
     linear-gradient(#e7e7e7 0.01%, #1a1a1a);
     --clamp-size: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
     --bg-color: #fff;
+    --bg-color-transform: #000;
+    --text-color-transform: #fff;
     --gap-card: 25px;
     --padding: var(--gap-card);
+
     --border-color: #000;
     --stroke-color: rgba(255, 255, 255, 1);
+
+    --fill-contour: #000;
+    --animation-fill-color: red;
+    --fill-sparks: red;
+    --fill-core: #fff;
+    --fill-hover: #000;
 }
