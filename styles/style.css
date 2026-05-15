@@ -68,7 +68,7 @@
   flex-direction: column;
   gap: calc(var(--gap-card) * 2);
   font-size: var(--font-size);
-  font-weight: var(--main-wght);
+  font-variation-settings: var(--main-wght);
 }
 
 
@@ -85,7 +85,7 @@
 
 .card__title {
   padding: 4px 10px;
-  font-weight: var(--accent-wght);
+  font-variation-settings: var(--accent-wght);
   font-size: inherit;
 }
 

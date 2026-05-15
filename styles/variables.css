@@ -4,8 +4,8 @@
     --accent-font: 'Press Start 2P';
     --font-size: 18px;
     --accent-font-size: .88rem;
-    --main-wght: 410;
-    --accent-wght: 715;
+    --main-wght: wght '410';
+    --accent-wght: whgt '715';
     --bg-gradient: repeating-linear-gradient(to right, #d3d3d3, transparent 2px),
     repeating-linear-gradient(#d3d3d3, transparent 2px),
     linear-gradient(#e7e7e7 0.01%, #1a1a1a);
