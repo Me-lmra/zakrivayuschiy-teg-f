@@ -17,6 +17,7 @@
   font-family: var(--main-font, sans-serif);
   font-variation-settings: var(--main-wght);
   background-image: var(--bg-gradient);
+  background-color: var(--bg-color);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
