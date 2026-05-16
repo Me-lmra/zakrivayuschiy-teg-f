@@ -12,3 +12,4 @@ JavaScript
 
 Лицезреть
 https://github.com/Me-lmra/zakrivayuschiy-teg-f.git
+https://me-lmra.github.io/zakrivayuschiy-teg-f/ - сайт
