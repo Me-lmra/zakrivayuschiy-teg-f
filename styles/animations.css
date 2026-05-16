@@ -53,10 +53,6 @@
 
 /* анимация кнопки сердца */
 
-.like-icon {
-    transform-origin: center;
-}
-
 .card__icon-button:focus {
     outline: none;
 }
@@ -113,6 +109,7 @@
 }
 
 .is-liked .heart {
+    transform-origin: center;
     animation: heart .3s ease-in .1s 1;
 }
 
