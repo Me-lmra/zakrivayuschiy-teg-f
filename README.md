@@ -11,4 +11,4 @@ JavaScript
 
 
 Лицезреть
-https://github.com/Me-lmra/zakrivayuschiy-teg-f.git
+
